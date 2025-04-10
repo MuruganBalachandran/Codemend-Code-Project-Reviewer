@@ -1,0 +1,219 @@
+.auth-overlay-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.auth-overlay-content {
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+.auth-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.auth-overlay-message {
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.auth-overlay-lock {
+  color: #0070f3;
+  margin-bottom: 20px;
+}
+
+.auth-overlay-message h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.auth-overlay-message p {
+  margin-bottom: 25px;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.auth-overlay-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.auth-overlay-button {
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.auth-overlay-button.login {
+  background-color: transparent;
+  color: #0070f3;
+  border: 2px solid #0070f3;
+}
+
+.auth-overlay-button.login:hover {
+  background-color: rgba(0, 112, 243, 0.1);
+}
+
+.auth-overlay-button.signup {
+  background-color: #0070f3;
+  color: white;
+  border: 2px solid #0070f3;
+}
+
+.auth-overlay-button.signup:hover {
+  background-color: #005ad1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 112, 243, 0.2);
+}
+
+.protected-route-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.protected-route-content {
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+.protected-route-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.protected-route-message {
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.protected-route-lock {
+  color: #0070f3;
+  margin-bottom: 20px;
+}
+
+.protected-route-message h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.protected-route-message p {
+  margin-bottom: 25px;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.protected-route-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.protected-route-button {
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.protected-route-button.login {
+  background-color: transparent;
+  color: #0070f3;
+  border: 2px solid #0070f3;
+}
+
+.protected-route-button.login:hover {
+  background-color: rgba(0, 112, 243, 0.1);
+}
+
+.protected-route-button.signup {
+  background-color: #0070f3;
+  color: white;
+  border: 2px solid #0070f3;
+}
+
+.protected-route-button.signup:hover {
+  background-color: #005ad1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 112, 243, 0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 480px) {
+  .auth-overlay-message {
+    padding: 30px 20px;
+  }
+  
+  .auth-overlay-message h2 {
+    font-size: 1.5rem;
+  }
+  
+  .auth-overlay-message p {
+    font-size: 0.95rem;
+  }
+  
+  .auth-overlay-button {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+  }
+
+  .protected-route-message {
+    padding: 30px 20px;
+  }
+  
+  .protected-route-message h2 {
+    font-size: 1.5rem;
+  }
+  
+  .protected-route-message p {
+    font-size: 0.95rem;
+  }
+  
+  .protected-route-button {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+  }
+}

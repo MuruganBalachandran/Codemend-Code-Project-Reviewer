@@ -1,0 +1,315 @@
+.signup-page {
+  min-height: calc(100vh - 60px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+/* Most styles inherited from Login.css, adding signup-specific styles */
+
+/* Form alignment fixes */
+.terms-agreement {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.terms-agreement input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  accent-color: #0070f3;
+}
+
+.terms-agreement label {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.terms-agreement a {
+  color: #0070f3;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.terms-agreement a:hover {
+  text-decoration: underline;
+}
+
+.signup-image {
+  display: none;
+}
+
+.password-strength {
+  margin-top: 8px;
+}
+
+.strength-bar {
+  height: 4px;
+  border-radius: 2px;
+  background-color: #e0e0e0;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+.strength-indicator {
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.weak { width: 25%; background-color: #e53935; }
+.medium { width: 50%; background-color: #ffa000; }
+.strong { width: 75%; background-color: #7cb342; }
+.very-strong { width: 100%; background-color: #43a047; }
+
+.strength-text {
+  font-size: 0.8rem;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+}
+
+.requirements {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.requirement {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 2px;
+}
+
+.requirement.met {
+  color: #43a047;
+}
+
+.requirement.unmet {
+  color: #999;
+}
+
+.requirement svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Form transitions */
+.auth-form .form-group {
+  animation: slideIn 0.4s ease;
+  animation-fill-mode: both;
+}
+
+.auth-form .form-group:nth-child(1) { animation-delay: 0.1s; }
+.auth-form .form-group:nth-child(2) { animation-delay: 0.2s; }
+.auth-form .form-group:nth-child(3) { animation-delay: 0.3s; }
+.auth-form .form-group:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideIn {
+  from { 
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Success animation for when account is created */
+.success-animation {
+  text-align: center;
+  padding: 30px 0;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.success-animation.visible {
+  display: block;
+  opacity: 1;
+  animation: bounceIn 0.6s ease;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background-color: #43a047;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  position: relative;
+}
+
+.success-icon::before {
+  content: '';
+  width: 30px;
+  height: 15px;
+  border-left: 4px solid white;
+  border-bottom: 4px solid white;
+  transform: rotate(-45deg);
+  position: absolute;
+  left: 24px;
+  top: 28px;
+}
+
+.success-message {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.success-description {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* Testimonial styling */
+.auth-testimonial {
+  display: none;
+}
+
+/* Form specific overrides */
+.auth-form {
+  margin: 30px 0;
+  padding: 0 15px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+/* Input container styling */
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px 40px 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.input-field::placeholder {
+  color: #aaa;
+  opacity: 1; /* Ensure consistent placeholder opacity */
+}
+
+.input-field:focus {
+  border-color: #0070f3;
+  box-shadow: 0 0 0 2px rgba(0, 112, 243, 0.2);
+  outline: none;
+}
+
+.input-field.error {
+  border-color: #e53935;
+}
+
+/* Password toggle styling */
+.password-toggle {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 3;
+  color: #777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+  color: #0070f3;
+}
+
+.password-toggle svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.5;
+}
+
+/* Adjust input field padding for password fields with toggle button */
+input[type="password"],
+input[type="text"].input-field {
+  padding-right: 70px; /* Make room for both toggle and icon */
+}
+
+/* Fix for mobile devices and different browsers */
+@media screen and (max-width: 480px) {
+  .input-field {
+    font-size: 0.9rem;
+    padding-right: 40px;
+    padding-left: 12px;
+  }
+  
+  .input-icon {
+    right: 10px;
+  }
+}
+
+/* Browser-specific fixes */
+@supports (-webkit-touch-callout: none) {
+  /* Safari specific fix */
+  .input-field::placeholder {
+    padding-left: 0;
+  }
+}
+
+@-moz-document url-prefix() {
+  /* Firefox specific fix */
+  .input-field {
+    text-indent: 0;
+  }
+}
+
+/* Auth success styling */
+.auth-success {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
